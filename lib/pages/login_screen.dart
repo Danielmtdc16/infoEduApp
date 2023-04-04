@@ -13,6 +13,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
 
   bool active = true;
+  bool _showPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 kSpacing,
-                CustomTextField(
+                const CustomTextField(
                   hintTextInput: "Email",
                   icon: Icons.supervised_user_circle,
                   textInputType: TextInputType.emailAddress,
@@ -48,9 +49,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 CustomTextField(
                   hintTextInput: "Senha",
                   icon: Icons.lock,
-                  suffixIcon: null,
+                  suffixIcon: active ? GestureDetector(
+                    child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
+                    onTap: (){
+                      setState(() {
+                        _showPassword = !_showPassword;
+                      });
+                    },
+                  ) : null,
                   textInputType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.go,
+                  obscureText: _showPassword == false ? false : true,
                 ),
                 kSpacing,
                 CustomButton(
