@@ -20,13 +20,15 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text("Acessar"),
+        title: const Text("Acessar"),
         centerTitle: true,
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            clipBehavior: Clip.none,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 kSpacing,
                 const CustomTextField(
                   hintTextInput: "Email",
-                  icon: Icons.supervised_user_circle,
+                  icon: Icons.account_circle,
                   textInputType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                 ),

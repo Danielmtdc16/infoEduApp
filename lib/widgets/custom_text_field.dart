@@ -3,19 +3,19 @@ import 'package:infoedu/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintTextInput;
-  final IconData icon;
+  final IconData? icon;
   final Widget? suffixIcon;
   final TextInputType textInputType;
-  final TextInputAction textInputAction;
+  final TextInputAction? textInputAction;
   final bool obscureText;
 
   const CustomTextField({
     Key? key,
     required this.hintTextInput,
-    required this.icon,
+    this.icon,
     this.suffixIcon,
     required this.textInputType,
-    required this.textInputAction,
+    this.textInputAction,
     this.obscureText = false,
   }) : super(key: key);
 
