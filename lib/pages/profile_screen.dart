@@ -71,10 +71,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 color: Colors.white,
                 padding: const EdgeInsets.all(20.0),
                 width: double.infinity,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       "INFORMAÇÕES",
                       style: TextStyle(
                         color: Colors.black54,
@@ -82,33 +82,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ),
                     ),
                     kSpaceBetweenLabels,
-                    Text("E-MAIL", style: klabelText),
+                    const Text(
+                      "E-MAIL",
+                      style: klabelText,
+                    ),
                     kSpaceBetweenInfoText,
-                    Text(
+                    const Text(
                       "saura@sistemasca.com",
                       style: kinfoText,
                     ),
                     kSpaceBetweenLabels,
-                    Text(
+                    const Text(
                       "TELEFONE",
                       style: klabelText,
                     ),
-                    Text(
+                    const Text(
                       "(35) 98212-1542",
                       style: kinfoText,
                     ),
                     kSpaceBetweenLabels,
-                    Text(
+                    const Text(
                       "IDADE",
                       style: klabelText,
                     ),
                     kSpaceBetweenInfoText,
-                    Text(
+                    const Text(
                       "18 anos",
                       style: kinfoText,
                     ),
                     kSpaceBetweenLabels,
-
+                    const Text(
+                      "RESPONSÁVEIS",
+                      style: klabelText,
+                    ),
+                    kSpaceBetweenInfoText,
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: responsibles.length,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          responsibles[index],
+                          style: kinfoText,
+                        );
+                      }
+                    ),
                   ],
                 ),
               ),
