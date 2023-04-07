@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:infoedu/widgets/custom_text_field.dart';
-import 'package:infoedu/widgets/custom_button.dart';
 import 'package:infoedu/widgets/photo_attachment.dart';
 import 'package:infoedu/constants.dart';
 
@@ -24,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
       backgroundColor: Colors.white.withOpacity(0.89),
       body: Padding(
-        padding: const EdgeInsets.only(right: 15.0, left: 15.0, top: 30.0),
+        padding: const EdgeInsets.only(right: 15.0, left: 15.0, top: 20.0),
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
@@ -37,24 +35,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     margin: const EdgeInsets.only(top: 70.0),
                     padding: const EdgeInsets.all(10.0),
                     width: double.infinity,
-                    child: Column(
+                    child: const Column(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           height: 80.0,
                         ),
-                        const Text(
+                        Text(
                           "Isaura Terra",
                           style: knameText,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 10.0,
                         ),
-                        const Text(
+                        Text(
                           "#126",
                           style: kcodeText,
                         ),
-                        const SizedBox(
-                          height: 25.0,
+                        SizedBox(
+                          height: 10.0,
                         ),
                       ],
                     ),
@@ -83,6 +81,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     kSpaceBetweenLabels,
                     const Text(
+                      "IDADE",
+                      style: klabelText,
+                    ),
+                    kSpaceBetweenInfoText,
+                    const Text(
+                      "18 anos",
+                      style: kinfoText,
+                    ),
+                    kSpaceBetweenLabels,
+                    const Text(
+                      "DATA DE NASCIMENTO",
+                      style: klabelText,
+                    ),
+                    kSpaceBetweenInfoText,
+                    const Text(
+                      "24/08/2004",
+                      style: kinfoText,
+                    ),
+                    kSpaceBetweenLabels,
+                    const Text(
                       "E-MAIL",
                       style: klabelText,
                     ),
@@ -102,12 +120,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     kSpaceBetweenLabels,
                     const Text(
-                      "IDADE",
+                      "ENDEREÇO",
                       style: klabelText,
                     ),
                     kSpaceBetweenInfoText,
                     const Text(
-                      "18 anos",
+                      "Rua Valdomiro Oliveira, 290, Bairro Bela Vista, Cristino Castro - PI",
                       style: kinfoText,
                     ),
                     kSpaceBetweenLabels,
@@ -117,19 +135,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     kSpaceBetweenInfoText,
                     ListView.builder(
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: responsibles.length,
-                      itemBuilder: (context, index) {
-                        return Text(
-                          responsibles[index],
-                          style: kinfoText,
-                        );
-                      }
-                    ),
+                        shrinkWrap: true,
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: responsibles.length,
+                        itemBuilder: (context, index) {
+                          return Text(
+                            responsibles[index],
+                            style: kinfoText,
+                          );
+                        }),
                   ],
                 ),
               ),
+              kSpacing,
             ],
           ),
         ),
