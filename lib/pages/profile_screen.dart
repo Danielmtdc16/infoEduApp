@@ -12,6 +12,8 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  List<String> responsibles = ["Alexa", "José"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,75 +22,70 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: const Text("Nome do Aluno"),
         centerTitle: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.only(right: 15.0, left: 15.0, top: 30.0),
+      body: Padding(
+        padding: const EdgeInsets.only(right: 15.0, left: 15.0, top: 30.0),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              PhotoAttachment(),
+              const PhotoAttachment(),
               kSpacing,
-              CustomTextField(
+              const CustomTextField(
                 hintTextInput: "Nome",
-                icon: Icons.account_circle,
+                icon: Icon(Icons.account_circle),
                 textInputType: TextInputType.text,
                 textInputAction: TextInputAction.next,
               ),
               kSpacing,
-              CustomTextField(
+              const CustomTextField(
                 hintTextInput: "Data de Nascimento",
-                icon: Icons.calendar_month,
+                icon: Icon(Icons.calendar_month),
                 textInputType: TextInputType.text,
                 textInputAction: TextInputAction.next,
               ),
               kSpacing,
-              CustomTextField(
-                hintTextInput: "Logradouro",
-                icon: Icons.add_road,
+              const CustomTextField(
+                hintTextInput: "Endereço",
                 textInputType: TextInputType.text,
                 textInputAction: TextInputAction.next,
+                maxLines: 5,
               ),
               kSpacing,
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomTextField(
-                        hintTextInput: "Número",
-                        icon: Icons.onetwothree,
-                        textInputType: TextInputType.number,
-                    ),
-                  ),
-                  SizedBox(width: 10.0,),
-                  Expanded(
-                    child: CustomTextField(
-                        hintTextInput: "Bairro",
-                        icon: Icons.place,
-                        textInputType: TextInputType.text,
-                    ),
-                  ),
-                ],
+              const Divider(),
+              const Text(
+                "Responsáveis",
+                style: TextStyle(color: Colors.black45, fontSize: 20),
+                textAlign: TextAlign.center,
               ),
               kSpacing,
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomTextField(
-                        hintTextInput: "Cidade",
-                        icon: Icons.location_city,
-                        textInputType: TextInputType.number,
-                    ),
-                  ),
-                  SizedBox(width: 10.0,),
-                  Expanded(
-                    child: CustomTextField(
-                        hintTextInput: "Estado",
-                        icon: Icons.map,
-                        textInputType: TextInputType.text,
-                    ),
-                  ),
-                ],
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: responsibles.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: kCinzaMuitoClaro,
+                        ),
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          responsibles[index],
+                          style: const TextStyle(
+                            color: Colors.black45,
+                            fontSize: 15.0,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 5.0,),
+                    ],
+                  );
+                },
               ),
             ],
           ),

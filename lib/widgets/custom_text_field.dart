@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:infoedu/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  final String hintTextInput;
-  final IconData? icon;
+  final String? hintTextInput;
+  final Widget? icon;
   final Widget? suffixIcon;
   final TextInputType textInputType;
   final TextInputAction? textInputAction;
   final bool obscureText;
+  final int? maxLines;
 
   const CustomTextField({
     Key? key,
-    required this.hintTextInput,
+    this.hintTextInput,
     this.icon,
     this.suffixIcon,
     required this.textInputType,
     this.textInputAction,
     this.obscureText = false,
+    this.maxLines,
   }) : super(key: key);
 
   @override
@@ -34,7 +36,7 @@ class CustomTextField extends StatelessWidget {
         fillColor: kCinzaMuitoClaro,
         filled: true,
         floatingLabelBehavior: FloatingLabelBehavior.never,
-        prefixIcon: Icon(icon),
+        prefixIcon: icon,
         prefixIconColor: Colors.black45,
         suffixIcon: suffixIcon,
         suffixIconColor: Colors.black45,
@@ -42,6 +44,7 @@ class CustomTextField extends StatelessWidget {
       keyboardType: textInputType,
       textInputAction: textInputAction,
       obscureText: obscureText,
+      maxLines: maxLines,
     );
   }
 }

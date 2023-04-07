@@ -43,14 +43,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 kSpacing,
                 const CustomTextField(
                   hintTextInput: "Email",
-                  icon: Icons.account_circle,
+                  icon: Icon(Icons.account_circle),
                   textInputType: TextInputType.emailAddress,
                   textInputAction: TextInputAction.next,
                 ),
                 kSpacing,
                 CustomTextField(
                   hintTextInput: "Senha",
-                  icon: Icons.lock,
+                  icon: const Icon(Icons.lock),
                   suffixIcon: active ? GestureDetector(
                     child: Icon(_showPassword ? Icons.visibility : Icons.visibility_off),
                     onTap: (){
