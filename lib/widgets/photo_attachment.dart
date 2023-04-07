@@ -7,7 +7,7 @@ class PhotoAttachment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CircleAvatar(
-      backgroundColor: Colors.black12,
+      backgroundColor: Colors.white,
       backgroundImage: null,
       maxRadius: 70.0,
       child: Center(
