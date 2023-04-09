@@ -28,6 +28,18 @@ const TextStyle kinfoText = TextStyle(
   fontWeight: FontWeight.w600,
 );
 
+const TextStyle kcardTitle = TextStyle(
+  color: Colors.white,
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+);
+
+const TextStyle kcardSubtitle = TextStyle(
+  color: Colors.black54,
+  fontSize: 15,
+  fontWeight: FontWeight.w600,
+);
+
 const SizedBox kSpaceBetweenLabels = SizedBox(height: 15.0,);
 
 const SizedBox kSpaceBetweenInfoText = SizedBox(height: 5.0,);
