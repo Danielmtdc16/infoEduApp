@@ -19,24 +19,28 @@ const TextStyle kcodeText = TextStyle(
 const TextStyle klabelText = TextStyle(
   color: Colors.black45,
   fontSize: 13,
+  fontFamily: 'Poppins',
   fontWeight: FontWeight.w600,
 );
 
 const TextStyle kinfoText = TextStyle(
   color: Colors.black54,
   fontSize: 15,
+  fontFamily: 'Poppins',
   fontWeight: FontWeight.w600,
 );
 
 const TextStyle kcardTitle = TextStyle(
   color: Colors.white,
   fontSize: 20,
+  fontFamily: 'Poppins',
   fontWeight: FontWeight.w600,
 );
 
 const TextStyle kcardSubtitle = TextStyle(
-  color: Colors.black54,
+  color: Colors.black45,
   fontSize: 15,
+  fontFamily: 'Poppins',
   fontWeight: FontWeight.w600,
 );
 

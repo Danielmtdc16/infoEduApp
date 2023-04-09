@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputType textInputType;
   final TextInputAction? textInputAction;
-  final bool obscureText;
+  final bool? obscureText;
   final int? maxLines;
 
   const CustomTextField({
@@ -18,7 +18,7 @@ class CustomTextField extends StatelessWidget {
     required this.textInputType,
     this.textInputAction,
     this.obscureText = false,
-    this.maxLines,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -43,7 +43,7 @@ class CustomTextField extends StatelessWidget {
       ),
       keyboardType: textInputType,
       textInputAction: textInputAction,
-      obscureText: obscureText,
+      obscureText: obscureText!,
       maxLines: maxLines,
     );
   }
